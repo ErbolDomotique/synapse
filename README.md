@@ -1,6 +1,6 @@
 ![Erbol](http://erbol.fr/themes/jms_megamall/img/logo.png)
 
-[Erbol - Site internet](http://erbol.fr))
+[Erbol - Site internet](http://erbol.fr)
 
 # Erbol Synapse #
 

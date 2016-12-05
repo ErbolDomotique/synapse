@@ -223,7 +223,8 @@ if (!isConnect()) {
 			<div class="container-fluid">
 				<div class="navbar-header">
 					<a class="navbar-brand" href="<?php echo $homeLink; ?>">
-						<img src="core/img/logo-jeedom-grand-nom-couleur.svg" height="30" style="position: relative; top:-5px;"/>
+						<!-- TODO replace by a svg image -->
+						<img src="core/img/logo-jeedom-petit-nom-couleur-128x128.png" height="30" style="position: relative; top:-5px;"/>
 					</a>
 					<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
 						<span class="sr-only">{{Toggle navigation}}</span>
