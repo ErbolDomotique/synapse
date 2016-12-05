@@ -1,0 +1,175 @@
+= Resumen de domótica
+
+Esta página permite tener un resumen de la domótica de su casa y  también muestra la organización de dispositivos y ordenes, posibilita la configuración avanzada de los dispositivos y ordenes, así como la posibilidad de mostrar la configuración de pantalla. Se desglosa en dos pestañas "Mi domótica" y "Configuración de pantalla".
+
+Esta página es accesible a través de herramientas -> Resumen domótico: 
+
+image::../images/display.png[]
+
+La primera pestaña permite organizar los diferentes dispositivos, ordenes, acceso a la configuración avanzada, así como la configuración en masa. Aquí está:
+
+image::../images/display2.png[]
+
+Aquí se encuentra un resumen del número de objetos existentes, el número de dispositivos y el número de ordenes. A la derecha hay un botón para ocultar todos los dispositivos inactivos y un campo de búsqueda, por ejemplo buscar un dispositivo, orden o todos los dispositivos de un determinado tipo (plugin,por ejemplo escriba rfxcom para obtener todos los dispositivos rfxcom)
+
+A continuación encontrará un marco por objeto, en cada marco, una lista de dispositivos (en azul) conteniendo los objetos. En la línea de los nombres de los objetos hasta 3 botones, en orden: 
+
+* El primero se utiliza para abrir la configuración de la página de objeto en una nueva pestaña
+* el segundo ofrece un resumen sobre el objeto
+* el último le permite ocultar la lista dispositivoss (abajo en azul)
+
+[TIP]
+El color de fondo del recuadro del objeto depende del color en la configuración del objeto
+
+Pueder hacer clic/mantenimiento en un dispositivo y cambar el orden del objeto o asignar a otro objeto
+
+[TIP]
+Es a partir de este comando como calcula el orden de visualización en el Dashboard
+
+En cada dispositivo encontramos : 
+
+image::../images/display3.png[]
+
+* una marca de verificación para seleccionar el dispositivo (puede seleccionar varios), si se selecciona al menos un dispositivo tienes botones de acción para eliminar, deshabilitar, habilitar, hacer visible o invisible el dispositivo seleccionado
+
+image::../images/display4.png[]
+
+* El nombre del dispositivo
+* el tipo de dispositivo (ID del plugin al que pertenece)
+* una equis (X) significa que el equipo está inactivo (Si no, significa que el equipo está activo)
+* un ojo tachado significa que el equipo es invisible (Si no, significa que el equipo está activo)
+* enlace externo: permite abrir en una nueva pestaña la página de configuración del dispositivo
+* Configuración avanzado (rueda dentada pequeña): permite abrir la ventana de configuración avanzada
+
+[TIP]
+Doble clic en el dispositivo también permite abrir la ventana de configuración avanzada
+
+* Lista de comandos (flecha) : permite desplegar la lista de comandos
+
+Si se despliega la lista de ordenes se obtiene: 
+
+image::../images/display5.png[]
+
+Cada bloque amarillo corresponde a un comando de su dispositivo (uno nuevo en la pequeña flecha del dispositivo permite ocultarlos). Si hace doble clic en el comando o clic en la rueda dentada pequeña, aparecerá la ventana de configuración
+
+==  Configuración avanzada  del dispositivo
+
+La ventana de configuración avanzada del dispositivo consiste en 2 pestañas: información y visualizaciones avanzadas. 
+
+En la parte superior también encontrará un botón guardar y un botón borrar dispositivo
+
+[TIP]
+Es posible acceder directamente (si es compatible con el plugin)  a esta ventana de la página de configuración dispositivo, haciendo clic en la rueda dentada pequeña 3 ( se suele encontrar en la parte superior, al lado del título "General")
+
+=== Información
+
+image::../images/display9.png[]
+
+La ficha de información contiene la información general del dispositivo: 
+
+* * ID * : Identificador único en la base de datos
+* *Nombre* : nombre del dispositivo
+* *ID Lógica* : identificador lógico del dispositivo (puede estar vacío)
+* *ID del objeto* : identificador único del objeto padre (puede estar vacio)
+* * Fecha de creación*: fecha de creación del dispositivo
+* *Activar*: Permite activar o desactivar el dispositivo (recuerde guardar)
+** Visible *: permite hacer visible o invisible el dispositivo (recuerde guardar)
+** Tipo *: Identificador del plugin al que pertenece
+* * Intentos fallidos* : número de intentos consecutivos de comunicación fallidos del dispositivo
+* * Última actualización* : fecha de la última comunicación con el equipo
+
+=== Pantalla avanzada
+
+image::../images/display10.png[]
+
+En la parte central podrás configurar ciertas opciones de visualización para el Dashborad, las vistas, el diseño y el móvil.
+
+Puedes: 
+
+** Visible *: permite ocultar o mostrar el dispositivo en el escritorio o el móvil
+* *Mostrar nombre* : permite ocultar el nombre del dispositivo a mostrar según el tipo de vista (Dashboard, diseño, vistas o móvil) 
+* *Mostrar el nombre del objeto *: solamente para modo vista, esto permite ocultar el nombre del objeto al lado del nombre del dispositivo
+* * Mostrar el nivel de batería *: sólo para el Dashboard, los diseños y las vistas, esta opción ocultará/mostrara el nivel del batería del dispositivo (si es que dispone de ella)
+
+A continuación nos encontramos con el ajuste de visualización opcional que puede tener el dispositivo. Estos parámetros constan de un nombre y un valor. Actualmente solo se utiliza el valor "estilo" , que permite insertar código CSS en el dispositivo en cuestión. Aquí un ejemplo para redondear las esquinas: 
+
+image::../images/display11.png[]
+
+[TIP]
+No olvide guardar los cambios después de hacer modificaciones
+
+=== Batería
+
+image::../images/display16.png[]
+
+Esta ficha permite obtener información sobre la batería del dispositvo: tipo de batería, fecha última información, nivel restante (si es que sus dispositivos funcionan con bateria). Tambien puede configurar los umbrales de alerta específicos para este dispositivo
+
+== Configuración avanzada de una orden
+
+La ventana de configuración avanzada de comandos se compone de 3 pestañas: información, configuración avanzada y vista avanzada. 
+
+También tiene 2 botones, uno para salvar y otro para aplicar la misma configuración a otra orden
+
+=== Información
+
+image::../images/display12.png[]
+
+La pestaña de información contiene información general acerca de la orden:
+
+* * ID * : Identificador único en la base de datos
+* *ID Lógico* : identificación lógico del comando (puede estar vacío)
+* * Nombre*: nombre de la orden
+* * Tipo* : tipo de orden (acción o información)
+* *Subtipo * : según el tipo de orden (binario, digital...)
+* *URL directa * : proporciona una dirección URL (haga clic derecho, copiar la dirección del enlace) dependiendo del tipo de orden desencadenara una acción o recuperara el valor (si se trata de una orden de tipo información)
+* *Unidad* : la unidad de de medición de la orden º, kw.. etc
+* * Orden de actualización*: da el identificador de otro comando que si este cambia, fuerza la actualización de la orden mostrada
+** Cache *: duración del valor de la orden en memoria (una vez que este período expire Jeedom solicita su valor). Atención si usted tiene un evento entonces este parámetro se omite porque la duración es ilimitada. Si usted no tiene ningún valor y no tiene eventos, entonces el tiempo de expiración se establece por la configuración de Jeedom (por defecto 300 seg)
+* *Solo por evento* : indica a Jeedom que no solicite el valor del comando (es el  dispositivo o el pluging quien lo transmiten)
+* *Visible* : establece si el control es visible o no
+
+A continuación encontrará la lista de los diferentes dispositivos, controles, escenas o interacciones que utilizan esta orden. Haga clic arriba para ir directamente a su respectiva configuración
+
+=== Configuración avanzada
+
+image::../images/display13.png[]
+
+Más opciones aquí (puede variar en función del tipo y subtipo del comando). 
+
+Para una orden de tipo información:
+
+* *Cálculo y redondeo*
+** Fórmula de calculo (\#value# valor)* : aquí, puedes hacer una operación sobre el valor de la orden antes de ser procesada por Jeedom, ejemplo: \#valeur# - 0.2 a restar 0,2 (offset sobre un sensor de temperatura)
+** Redondeo (dígitos después de la coma) *: permite redondear el valor dela orden, ejemplo: poner 2 decimales para transformar 16.643345 en 16.64
+* *Tipo genérico* : esto le permite configurar el tipo genérico de orden (jeedom intenta encontrar por usted automáticamente). Esta información es utilizada por la aplicación móvil.
+** Acción según valor* : esto le permite hacer una especie de mini escena, por ejemplo, puede decir que si este valor es mayor de 50 por 3 minutos realice tal acción. Esto permitiría por ejemplo apagar una luz X minutos después de que se produzca la acción.
+* *Historial* : vaya a link:https://jeedom.com/doc/documentation/core/sp_SP/doc-core-history.html#_configuration_spécifique_par_commande[aquí]
+* *Otros*
+** *No repetir si no cambia el valor* : Si el comando obtiene 2 veces el mismo valor indica a Jeedom que el segundo no se tenga en cuenta(evita que se repita una escena si el valor no cambia)
+** Push URL *: permite agregar una dirección URL para llamar a la orden Actualizar. Usted puede utilizar las siguientes etiquetas: \#value# por el valor de la orden, \#cmd_name# para el nombre de la orden, \#cmd_id# para el id de la orden, \#humanname# para el nombre completo de la orden ([ej:  \#[Baño] [humedad] [cantidad] #)
+
+Si se despliega la lista de comandos se obtiene: 
+
+image::../images/display15.png[]
+
+* * Confirmar la acción *: durante una acción Jeedom requerira una confirmación vía interfaz de este comando
+* *Código de acceso* : durante una acción Jeedom requerirá autentificación vía interfaz del comando.
+
+=== Pantalla avanzada
+
+image::../images/display14.png[]
+
+En la parte central podrás configurar ciertas opciones de visualización del widget en el Dashborad, las vistas, el diseño y el móvil.
+
+Puedes: 
+
+* *Widget* : permite elegir el widget en el escritorio o el móvil (Nota, también se puede hacer dese el propio plugin widget, necesita estar instalado)
+* * Visible*: oculta o no la orden en el escritorio o móvil
+* *Mostrar nombre* : permite ocultar el nombre del dispositivo a mostrar según el tipo de vista (Dashboard, diseño, vistas o móvil)
+* *Mostrar estadísticas* :  permite ocultar las estadísticas según el contexto (Dashboard, diseño, vistas o móvil). PRECAUCIÓN debe activar las estadísticas en la configuración de Jeedom, configurar esta opción tienen un impacto en el rendimiento
+* *Volver a la línea forzada antes del widget* : permite añadir un salto a la línea antes o después del widget (Forzando por ejemplo la vista de comandos en diferentes columnas en lugar de líneas por defecto)
+
+A continuación encontraremos los parámetros de visualización opcional que tiene el widget. Estos paremetros dependen del widget en cuestión, Por lo tanto, mire sus especificaciones en el Market para conocerlas
+
+[TIP]
+No olvide guardar los cambios después de hacer modificaciones

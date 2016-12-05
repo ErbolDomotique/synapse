@@ -1,0 +1,41 @@
+= Salud
+
+La página de Salud de Jeedom le permite tener una rápida visión del estado de salud de su Jeedom. Asimismo, se indica (según plugins utilizados), el estado de salud del plugin
+
+Es accesible a través de  Análisis -> Salud
+
+image::../images/health1.png[]
+
+Una vez dentro esto es lo que verá: 
+
+image::../images/health2.png[]
+
+Aquí verás una tabla que da una descripción de lo que Jeedom ha comprobado y su estado en la columna 2, finalmente la última columna aconseja sobre la posible resolución si la verificación no fue OK
+
+A continuación encontrará la misma tabla pero para el plugin (si el plugin es compatible). Haga clic en el nombre del plugin, le lleva directamente a su página de configuración
+
+== Ayuda resolución
+
+=== Versión PHP
+
+Por el momento en la versión 5.5 de php no es necesario, usted puede dejar todo tal y como esta. El día que la versión 5.5 sea obligatoria, se le avisará
+
+=== Configuración nginx
+
+Mi configuración de nginx esta NOK, esto puede ser normal si ha cambiado el archivo/etc/nginx/sitios-disponible/default, en caso contrario haga desde SSH: 
+
+-Si estás en un mini/mini+ o que usted no usa /jeedom : 
+
+----
+sudo su -
+cp /usr/share/nginx/www/jeedom/install/nginx_default_without_jeedom /etc/nginx/sites-available/defaut
+service nginx restart
+---- 
+
+- Si usted utiliza /jeedom
+
+----
+sudo su -
+cp /usr/share/nginx/www/jeedom/install/nginx_default /etc/nginx/sites-available/defaut
+service nginx restart
+---- 

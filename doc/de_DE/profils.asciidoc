@@ -1,0 +1,72 @@
+= Profil
+
+Auf der Profilseite können sie ein bestimmtes Verhalten von Jeedom konfigurieren, speziell für den Benutzer : Haupt Seite, Themen der Desktop Version, der Mobilen Version, der Grafiken… Sie erlaubt auch, ihr Passwort zu ändern und in den Experten Modus überzugehen, was eine erweiterte Anpassung von Jeedom erlaubt.
+
+== Das Menü Profil 
+
+Oben rechts, gehen sie auf der Jeedom Seite auf das Menü Profil : 
+
+image::../images/profils1.png[]
+
+Vous retrouvez à coté de ce menu profil, une information sur le nombre de messages dans le centre de messages (ces messages sont importants sinon Jeedom ne vous les remonterait pas), l'heure Jeedom (attention c'est bien l'heure de Jeedom et non de votre PC), le menu profils, une icône indiquant la connexion (ici filaire, mais il est possible si vous êtes en wifi d'avoir celle-ci), l'icône pour l'accès à l'aide de la page en cours et l'icône pour faire une demande de support.
+
+Wenn sie auf das Menü Profil klicken, erhalten sie : 
+
+image::../images/profils2.png[]
+
+Aus diesem Menü haben  sie Zugriff auf die Profilseite, Experten Modus aktivieren oder deaktivieren, Jeedom Neustarten, Jeedom Ausschalten, den Wechsel in die mobile Version und die Schaltfläche Abmelden.
+
+[IMPORTANT]
+Das Ausführen von Neustart und Ausschalten geht in DIY nur, wenn sie den Befehl visudo richtig durchgeführt haben, siehe  link:https://jeedom.com/doc/documentation/installation/fr_FR/doc-installation.html#_etape_4_définition_des_droits_root_à_jeedom[hier]
+
+== Die Profil Seite
+
+Die Profilseite sieht wie folgt aus : 
+
+image::../images/profils3.png[]
+
+Hier finden sie unterschiedliche Felder wieder, die es ihnen ermöglicht Jeedom zu konfigurieren, alle diese Einstellungen sind nur mit ihrem Benutzer verbunden, sie sind also nur für sie
+
+=== Themen
+
+image::../images/profils4.png[]
+
+Auf dem Themen-Feld können sie die Schnittstellenparameter einstellen : 
+
+* *Desktop* : Themen zum verwenden im Desktop-Modus, Achtung nur das Standard-Theme wird offiziell von Jeedom unterstützt
+* *Mobil* : ermöglicht ein wenig das Mobile Thema zu konfigurieren (hier wird alles unterstützt), entweder hell oder dunkel, sowie die vorherrschende Farbe von diesem
+* *Diagramme Desktop* : ermöglicht das Standard-Theme für die Diagramme(Chronik) im Desktop-Modus zu definieren
+* *Diagramme Mobil* : ermöglicht das Standard-Theme für die Diagramme(Chronik) im Mobil-Modus zu definieren
+
+=== Schnittstelle
+
+image::../images/profils5.png[]
+
+Sie können hier bestimmte Verhaltensweisen der Schnittstelle einstellen : 
+
+* *Allgemein*
+** *Ne pas masquer les menus automatiquement* : indique à Jeedom de ne pas masquer le panneau de gauche, lorsqu'il existe, pour rappel ce panneau est disponible sur la plupart des pages des plugins, ainsi que la page des scénarios, des interactions, des objets....
+* *Standard Seite*
+** *Desktop* : Desktop Standardseite die angezeigt wird wenn man sich verbindet
+** *Mobil* : Mobile Standardseite die angezeigt wird wenn man sich verbindet
+* *Standardobjekt auf dem Armaturenbrett* : Objekt, das standardmäßig beim öffnen des Armaturenbretts angezeigt wird
+* *Standardansicht* : Ansicht, die standardmäßig beim öffnen des Armaturenbretts angezeigt wird
+* * Standard Design* : Design, das standardmäßig beim öffnen des Armaturenbretts angezeigt wird
+** *Vollbild* : Standardmäßig in Vollbild anzeigen, beim öffnen des Design
+* *Amaturenbrett*
+** *Das Szenarien-Panel anzeigen* : erlaubt standardmäßig, das Szenario Menü (rechts) auf dem Armaturenbrett sichtbar zu machen
+** *Das Objekt-Panel anzeigen* : erlaubt standardmäßig, das  Objekt Menü (inks) auf dem Armaturenbrett sichtbar zu machen
+* *Ansicht*
+** *Das Ansichten-Panel anzeigen* : erlaubt standardmäßig, das Ansichten Menü (links) auf der Ansichts-Seite sichtbar zu machen
+
+=== Benachrichtigungen
+
+image::../images/profils6.png[]
+
+Hier können Sie die Farbe der Meldungen einstellen, die in der Schnittstelle angezeigt wird
+
+=== Sicherheit
+
+image::../images/profils7.png[]
+
+C'est ici que vous pouvez changer votre mot de passe ainsi que la clef de sécurité pour les appareils (ordinateur,téléphone...) enregistrés. Un changement de cette clef obligera tous les péripheriques se connectant automatiquement avec votre compte à se réauthentifier

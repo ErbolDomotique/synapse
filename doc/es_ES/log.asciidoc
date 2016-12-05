@@ -1,0 +1,56 @@
+= Log
+
+== Visualización
+
+El menú de registros permite ver lo que está sucediendo en  la Domótica. En la mayoría de los casos los registros son utilizados para realizar la depuración y solución de problemas por el equipo de soporte. Este menú sólo está disponible en modo experto.
+
+Para acceder ir a Administración -> Registros : 
+
+image::../images/log1.JPG[]
+
+Se obtiene : 
+
+image::../images/log.JPG[]
+
+La página de registros es bastante sencilla, en la parte superior izquierda veras un menú desplegable que permite la elección del registro a consultar, en la parte superior derecha hay 5 botones:
+
+** Refrescar *: permite actualizar el registro actual.
+* *Descargar* : permite descargar el registro actual.
+* * Vacíar* : le permite borrar el registro actual.
+* * Borrar* : permite borrar el registro actual, si Jeedom lo necesita lo volverá a crear automáticamente.
+* *Borrar todos los logs* : borra todos los logs presentes.
+
+[TIP]
+Tenga en cuenta que no se puede eliminar el registro de nginx.error. ¡ Es esencial! Si  lo elimina (desde consola por ejemplo) no se volverá a generar hasta que reinicie Jeedom.
+
+== Configuración
+
+Hay algunas opciones de configuración de registro (accesible a través de la Administración -> configuración y luego en "Configuración de registro y mensajes").
+
+image::../images/log2.JPG[]
+
+Aquí, tienes las siguientes opciones :
+
+* *Mensajes*
+** Añadir un mensaje a cada error en los registros *: Si un plugin o Jeedom escribe un mensaje de error en un registro, Jeedom agrega automáticamente un mensaje en el centro de mensajes (Al menos de que estés seguro, no los marques)
+** *No permitir mensajes procedentes de * : permite prohibir algunos mensajes de plugin u otros
+** *Información control de usuario *: permite seleccionar una o más ordenes  (separar con &&) de tipo mensaje que se utilizarán por los nuevos mensajes (pueden ser notificados de inmediato)
+* *Registro* 
+** *Motor de registro *: permite cambiar el motor de registro por ejemplo enviar a un demonio syslog(d)
+** Número de lineas máximo de un archivo de registro *: establece el número máximo de líneas en un archivo de registro, se recomienda no tocar este valor, ya que un valor demasiado grande puede llenar el sistema de archivos o hacer que Jeedom no pueda mostrar registros
+** *Nivel de registro* : permite establecer los niveles de registro activo. PRECAUCIÓN: ha mayor nivel de registro, Jeedom se puede volver más lento! Esto también conduce a un desgaste prematuro de la tarjeta SD. Se recomienda configurar sólo el nivel de "Error". "Evento" puede activarse también porque es necesario ver en tiempo real lo que está sucediendo en la Domótica (esto si es solo necesario).
+
+== Registro "Evento" y nivel de registro de "Evento"
+
+El registro de "Evento" es algo particular. Para ponerlo en marcha, por favor, activar el nivel de registro de "Info" o más, entonces verá una lista de todos los eventos o acciones que suceden en la Domótica. Para acceder, usted debe hacer clic en el icono pequeño en la parte inferior derecha "contador" en Jeedom: 
+
+image::../images/log3.JPG[]
+
+Una vez hecho clic en él, sale una ventana que se actualiza cada segundo y muestra todos los eventos de la Domótica.
+
+image::../images/log4.JPG[]
+
+Arriba a la derecha tienes un campo de búsqueda (sólo funcional cuando este pausado) y un botón de pausa (útil para hacer un copy/paste por ejemplo).
+
+[IMPORTANTE]
+Para ponerlo en marcha, es absolutamente necesario activar el nivel "Info" o más (ver párrafo anterior)

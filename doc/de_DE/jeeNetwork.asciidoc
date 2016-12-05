@@ -1,0 +1,61 @@
+= Jeedom Netzwerk
+
+Page permettant d'interconnecter plusieurs Jeedom en mode maître/esclave. Cette possibilité permet par exemple de déporter le Z-Wave, le RFXCom, l'EnOcean ou le GSM sur d'autres Raspberry Pi ou Jeedom mini. Vous pourrez aussi à partir de cette page avoir un statut de vos Jeedom esclaves, consulter leur log, les mettre à jour, les arrêter, etc.
+
+== Das Jeedom Netzwerk
+
+Erreichbar unter Verwaltung -> Jeedom Netzwerk :
+
+image::../images/jeeNetwork4.JPG[]
+
+Einmal oben, haben Sie :
+
+image::../images/jeeNetwork.JPG[]
+
+Diese Seite listet all Ihre Slave auf und erlaubt jeden, mit bestimmten Konfigurationsmöglichkeiten und einem direkten Zugang, im Einzelnen zu sehen.
+
+[WICHTIG]
+Cette documentation ne décrit pas volontairement tous les menus disponibles car ils ne sont qu'un report des menus existants sur le maître pour centraliser la configuration. Il faut donc se reporter à la documentation existante pour avoir le détail de fonctionnement.
+
+== Konfiguration
+
+Das Setup ist sehr einfach, Sie müssen zunächst entscheiden, was der Master- und was das Slave-System ist. 
+Danach muss man auf den Slave auf Verwaltung->Konfiguration  im Teil "Netzwerkkonfiguration" gehen  
+und klicken Sie auf Slave : 
+
+image::../images/jeeNetwork2.JPG[]
+
+Sie müssen dann die notwendigen Plugins in Remote-Installation (Vorsicht nicht alle Plugins sind unbedingt kompatibel),  
+aktivieren und konfigurieren.
+
+Ensuite du coté du maître, aller dans Administration -> Configuration dans la partie "Configuration réseau" et 
+kompletter Teil "Accès interne" : 
+
+image::../images/jeeNetwork3.JPG[]
+
+Hier sind die Details: 
+
+* *Protokoll* : Das http Protokoll wird in der Regel verwendet
+- IP/Adresse : IP (oder Adresse, aber intern ist es ziemlich selten) des Masters (allgemein in der Form 192.168.xxx.xxx)
+* *Complement* : si vous avez une mini, center ou pro vous n'avez rien à mettre sinon vous devez mettre /jeedom
+* *Port* : 80, wenn Sie nicht die nginx-Konfiguration ändern
+
+Danach immer auf dem Master auf Einstellungen -> Jeedom Netzwerk gehen und auf "Jeedom hinzufügen" klicken : 
+
+image::../images/jeeNetwork.JPG[]
+
+- einen Namen geben
+- Slave ID anzeigen
+- die Ergänzung anzugeben wenn nötig (z.B.: /jeedom wenn sie einen Mini/Center/Pro haben  und verwenden sie /jeedom, um sich auf dem Slave zu verbinden
+- Der API-Schlüssel des Slave (ist auf dem Slave im Menü Administration -> Konfiguration zu finden)
+- Sicherungskopie
+
+Wenn sie eine Meldung erhalten die sagt, es ist OK, dann ist alles miteinander verbunden, normalerweise sollte der Master automatisch die Plugins vom Slave erkennen. 
+
+[WICHTIG]
+Bei Problemen mit einem Plugin im entfernten Modus finden Sie in der Dokumentation Hilfe.
+
+== Fehlerbehebung
+
+Fehler 404 beim Speichern::
+Es geht darum, dass es einen Fehler in der Netzwerk Konfiguration des Masters (im Allgemeinen) gibt.

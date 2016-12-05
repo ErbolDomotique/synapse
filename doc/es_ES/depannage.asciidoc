@@ -1,0 +1,124 @@
+= Solución de problemas
+
+Obtengo una página en blanco::
+Debe conectarse a  jeedom por SSH y lanzar un script de autodiagnóstico: 
+
+[source,bash]
+sudo chmod +x /usr/share/nginx/www/jeedom/health.sh;sudo /usr/share/nginx/www/jeedom/health.sh
+
+Este es el resultado si todo es correcto: 
+
+image::../images/depannage.png[]
+
+Si hay un problema en el script lo intentará corregir, si no se lo indicará.
+
+También puede ver el registro de usr/share/nginx/www/jeedom/log/nginx.error, muy a menudo esto le indica los problemas
+
+''''
+
+Tengo un problema de identificación de la BDD:
+Necesidad de reajustarlos
+[source,bash]
+bdd_password=$(cat /dev/urandom | tr -cd 'a-f0-9' | head -c 15)
+echo "DROP USER 'jeedom'@'localhost'" | mysql -uroot -p
+echo "CREATE USER 'jeedom'@'localhost' IDENTIFIED BY '${bdd_password}';" | mysql -uroot -p
+echo "GRANT ALL PRIVILEGES ON jeedom.* TO 'jeedom'@'localhost';" | mysql -uroot -p
+cd /usr/share/nginx/www/jeedom
+sudo cp core/config/common.config.sample.php core/config/common.config.php
+sudo sed -i -e "s/#PASSWORD#/${bdd_password}/g" core/config/common.config.php 
+sudo chown www-data:www-data core/config/common.config.php
+
+''''
+
+Tengo {...} en todas partes.
+La causa más frecuente es el uso de un plugin en versión beta y no Jeedom, o viceversa
+
+''''
+
+Al lanzar un comando tengo una rueda que gira sin parar::
+Sin embargo, esto ocurre amenudo debido al uso de un plugin en versión beta, mientras que Jeedom es estable
+
+''''
+
+Ya no tengo acceso a Jeedom ni por  ssh:.
+Este error es debido a un problema con el sistema pero no de Jeedom. 
+Si persiste después de la reinstalación es recomendable comprobar con el SAT si se trata de un problema de hardware
+
+''''
+
+Mi escena no funciona::
+Se recomienda ver los comandos ejecutadas por la escena, 
+a menudo esto es una orden que no termina (Bucle loop)
+
+''''
+
+Mi escena es lenta al ser ejecutada::
+Si la escena no tiene pausas es aconsejable chequear "ejecutar tan pronto como sea posible" (disponible en modo experto)
+
+''''
+
+No tengo ningún error en el registro nginx.error a pesar de los errores 500::
+ssh :
+Editar el archivo /etc/php5/fpm/pool.d/www.conf y descomentar la línea "; catch_worket_process = yes" (borra el ;)) 
+Reiniciar el php "sudo service php5-fpm restart"
+
+''''
+
+Tengo inestabilidades o errores 504::
+Compruebe que su sistema de archivos no está dañado, por ssh ejecute el comando: "sudo dmesg |" grep error"
+
+''''
+
+No veo todos mis dispositivos en el dashboard::
+A menudo esto es debido a que los dispositivos se asignan a un objeto del que no es hijo 
+l'objet lui-même du premier objet sélectionné à gauche dans l'arbre (vous pouvez dans votre profil configurer celui-ci)
+
+''''
+
+Al conectar al maestro con los esclavos obtengo errores::
+Compruebe que ha puesto el /jeedom correctamente  Si lo utilizas debe ir justo después de la IP jeedom 
+(a menudo en caso de instalación DIY)
+
+''''
+
+Tengo el siguiente error : SQLSTATE[HY000] [2002] Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock'::
+Esto se debe a que MySQL se detiene , no es normal, las posibles causas son : 
+* problemas de espacio en el sistema de archivos (se puede verificar utilizando el comando "df - h", SSH)
+* problema de corrupción de archivo, a menudo ocurre después de un cierre no limpio de jeedom (apagón)
+
+Por desgracia no hay solución en el segundo caso, 
+Lo mejor sería recuperar una copia de seguridad (disponibles en /usr/share/nginx/www/jeedom/backup por defecto), 
+reinstale jeedom y restaurare desde la copia de seguridad.
+También puedes comprobar desde SSH porque no se ejecuta mysql: 
+[source,bash]
+sudo su -
+service mysql stop
+mysqld --verbose
+
+O consultar el registro: /var/log/mysql/error.log
+
+''''
+
+los botones de parada/reinicio no funcionan:.
+En una instalación  DIY es normal hacer uso del comando visudo en SSH  
+Debe añadir: www-data ALL=(ALL) NOPASSWD: ALL.
+
+''''
+
+A menudo obtengo un "502 bad gateway":
+Tenemos que entrar (modo experto) en el jeedom, luego en configuración OS y haga clic en Inicio. Hacer clic en 'Registro' PHP, Si obtienes el mensaje 'servidor alcanzado pm.max_clidren' falta procesos php fpm , por lo tanto, hay que autorizar. Para hacer esto: 
+
+[source,bash]
+sudo su -
+cd /etc/php5/fpm/pool.d/
+vim www.conf
+
+Editar la linea "pm.max_children" en mettant "pm.max_children = 20"
+
+Simplemente reinicie php5-fpm
+
+[source,bash]
+sudo service php5-fpm restart
+
+No veo algunos plugins del market ::
+Esto ocurre si su jeedom no es compatible con el plugin, en general una actualización de jeedom puede corrige el problema.
