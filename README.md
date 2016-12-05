@@ -1,10 +1,13 @@
-![Travis ci](https://travis-ci.org/jeedom/core.svg)
+![Erbol](http://erbol.fr/themes/jms_megamall/img/logo.png)
 
-# Jeedom by Loïc #
+[Erbol - Site internet](http://erbol.fr))
 
-Website (English): [https://jeedom.com/site/en/](https://jeedom.com/site/en/)
+# Erbol Synapse #
 
-Website (French):  [https://jeedom.com/site/](https://jeedom.com/site/)
+Erbol Synapse est un projet basé sur la domotique.
+
+Il utilise le projet open Jeedom Core.
+Repository: [Jeedom Core](https://github.com/jeedom/core)
 
 # Installation #
 
@@ -17,16 +20,20 @@ Website (French):  [https://jeedom.com/site/](https://jeedom.com/site/)
 
 TIPS : pour nginx vous trouverez un exemple de la configuration web necessaire dans install/nginx_default.
 
-### Création de la BDD jeedom
+### Création de la BDD 
 
-Il vous faut créer une base de données jeedom sur mysql (en utf8_general_ci).
-
-### Téléchargement des fichiers
-
-Téléchargez les sources jeedom : https://github.com/jeedom/core/archive/stable.zip, décompressez les dans un repertoire de votre serveur web.
+Il vous faut créer une base de données sur mysql (en utf8_general_ci).
 
 ### Configuration et installation
 
 Allez (avec votre navigateur) sur `install/setup.php`.
 
 Remplissez les informations, validez et attendez la fin de l'installation. Les identifiants par défaut sont admin/admin.
+
+# License #
+
+GNU GENERAL PUBLIC LICENSE
+Version 2, June 1991
+
+Copyright (C) 1989, 1991 Free Software Foundation, Inc., <http://fsf.org/> 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. Everyone is permitted to copy and distribute verbatim copies of this license document, but changing it is not allowed.
+
