@@ -59,7 +59,7 @@ $loadExtensions = get_loaded_extensions();
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Jeedom Installation</title>
+	<title>Erbol Installation</title>
 	<script src="../3rdparty/jquery/jquery.min.js"></script>
 	<script src="../3rdparty/bootstrap/bootstrap.min.js"></script>
 	<link href="../3rdparty/font-awesome/css/font-awesome.min.css" rel="stylesheet">

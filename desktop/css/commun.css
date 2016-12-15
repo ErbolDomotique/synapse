@@ -335,3 +335,35 @@ input[type=checkbox] {
 .-sew-list-container{
   z-index: 3;
 }
+
+.btn-primary {
+  background-color: #1abc9c;
+  border-color: #19ad8f;
+}
+
+.navbar {
+  background-color: #1c1d1d;
+}
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+  background-color: #1abc9c;
+}
+
+.dropdown-menu {
+  background-color: #1abc9c;
+}
+.dropdown-menu>li>a {
+  color: #fff;
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: #cacaca; 
+}
+
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+  color: #8e8e8e;
+}
+
+body {
+  background-color: #f1f1f1;
+}

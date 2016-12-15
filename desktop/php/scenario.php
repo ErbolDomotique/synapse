@@ -101,23 +101,23 @@ foreach ($scenarioListGroup as $group) {
 
        <div class="cursor expertModeVisible" id="bt_displayScenarioVariable2" style="background-color : #ffffff; height : 130px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;" >
            <center>
-            <i class="fa fa-eye" style="font-size : 6em;color:#337ab7;"></i>
+            <i class="fa fa-eye" style="font-size : 6em;color:#1abc9c;"></i>
         </center>
-        <span style="font-size : 1.1em;position:relative; top : 15px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#337ab7"><center>{{Voir variables}}</center></span>
+        <span style="font-size : 1.1em;position:relative; top : 15px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#1abc9c"><center>{{Voir variables}}</center></span>
     </div>
 
     <div class="cursor expertModeVisible bt_showScenarioSummary" style="background-color : #ffffff; height : 130px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;" >
        <center>
-        <i class="fa fa-list" style="font-size : 6em;color:#337ab7;"></i>
+        <i class="fa fa-list" style="font-size : 6em;color:#1abc9c;"></i>
     </center>
-    <span style="font-size : 1.1em;position:relative; top : 15px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#337ab7"><center>{{Vue d'ensemble}}</center></span>
+    <span style="font-size : 1.1em;position:relative; top : 15px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#1abc9c"><center>{{Vue d'ensemble}}</center></span>
 </div>
 
 <div class="cursor expertModeVisible bt_showExpressionTest" style="background-color : #ffffff; height : 130px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;" >
    <center>
-    <i class="fa fa-check" style="font-size : 6em;color:#337ab7;"></i>
+    <i class="fa fa-check" style="font-size : 6em;color:#1abc9c;"></i>
 </center>
-<span style="font-size : 1.1em;position:relative; top : 15px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#337ab7"><center>{{Testeur d'expression}}</center></span>
+<span style="font-size : 1.1em;position:relative; top : 15px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#1abc9c"><center>{{Testeur d'expression}}</center></span>
 </div>
 </div>
 

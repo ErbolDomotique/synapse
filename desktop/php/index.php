@@ -21,7 +21,7 @@ if (isConnect()) {
 		$homeLink = 'index.php?v=d&p=dashboard';
 	}
 }
-$title = 'Jeedom';
+$title = 'Erbol';
 if (init('p') == '' && isConnect()) {
 	redirect($homeLink);
 }
@@ -50,7 +50,7 @@ if (count($plugins_list) > 0) {
 		foreach ($category as $pluginList) {
 			if ($pluginList->getId() == init('m')) {
 				$plugin = $pluginList;
-				$title = ucfirst($plugin->getName()) . ' - Jeedom';
+				$title = ucfirst($plugin->getName()) . ' - Erbol';
 			}
 			$plugin_menu .= '<li><a href="index.php?v=d&m=' . $pluginList->getId() . '&p=' . $pluginList->getIndex() . '"><img class="img-responsive" style="width : 20px;display:inline-block;" src="' . $pluginList->getPathImgIcon() . '" /> ' . $pluginList->getName() . '</a></li>';
 			if ($pluginList->getDisplay() != '' && config::bykey('displayDesktopPanel', $pluginList->getId(), 0) != 0) {

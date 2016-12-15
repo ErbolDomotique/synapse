@@ -81,9 +81,9 @@ foreach ($interactListGroup as $group) {
    </div>
    <div class="cursor" id="bt_testInteract2" style="background-color : #ffffff; height : 120px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 140px;margin-left : 10px;" >
      <center>
-      <i class="fa fa-comment-o" style="font-size : 6em;color:#337ab7;"></i>
+      <i class="fa fa-comment-o" style="font-size : 6em;color:#1abc9c;"></i>
     </center>
-    <span style="font-size : 1.1em;position:relative; top : 15px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#337ab7"><center>{{Tester}}</center></span>
+    <span style="font-size : 1.1em;position:relative; top : 15px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#1abc9c"><center>{{Tester}}</center></span>
   </div>
 </div>
 
